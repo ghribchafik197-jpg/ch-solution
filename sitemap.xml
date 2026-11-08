@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Remplace https://VOTRE-DOMAINE.dz/ par ton vrai nom de domaine -->
+<!-- Remplace https://ch-solution.vercel.app/ par ton vrai nom de domaine -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://VOTRE-DOMAINE.dz/</loc>
+    <loc>https://ch-solution.vercel.app/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>

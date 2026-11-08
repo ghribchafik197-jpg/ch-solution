@@ -3,5 +3,5 @@ Allow: /
 # Les pages de démonstration ne doivent pas apparaître sur Google
 Disallow: /demos/
 
-# Remplace https://VOTRE-DOMAINE.dz/ par ton vrai nom de domaine
-Sitemap: https://VOTRE-DOMAINE.dz/sitemap.xml
+# Remplace https://ch-solution.vercel.app/ par ton vrai nom de domaine
+Sitemap: https://ch-solution.vercel.app/sitemap.xml
