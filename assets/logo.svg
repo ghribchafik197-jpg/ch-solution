@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="30 110 950 910">
+  <defs>
+    <linearGradient id="chg" gradientUnits="userSpaceOnUse" x1="0" y1="140" x2="0" y2="990">
+      <stop offset="0" stop-color="#1fc8f7"/>
+      <stop offset="0.45" stop-color="#3a8be0"/>
+      <stop offset="0.72" stop-color="#6a66da"/>
+      <stop offset="1" stop-color="#9a3ce2"/>
+    </linearGradient>
+    <clipPath id="hclip"><circle cx="486" cy="565" r="232"/><rect x="690" y="0" width="400" height="1200"/></clipPath>
+  </defs>
+  <g fill="none" stroke="url(#chg)" stroke-width="50" stroke-linejoin="miter" stroke-miterlimit="10">
+    <path d="M596.03 298.85 L642.86 197.04 A400 400 0 1 0 642.86 932.96 L596.03 831.15 A288 288 0 1 1 596.03 298.85 Z"/>
+    <g clip-path="url(#hclip)">
+      <path d="M492.5 300 V509 H783 V166.5 H921 V965 H783 V619 H492.5 V830"/>
+      <path d="M396 300 V830"/>
+    </g>
+  </g>
+</svg>
