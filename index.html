@@ -199,7 +199,13 @@
     content: ""; position: absolute; width: 80%; aspect-ratio: 1; border-radius: 50%;
     background: var(--grad); filter: blur(90px); opacity: .18;
   }
-  .hero-logo img { position: relative; width: min(460px, 95%); animation: float 6s ease-in-out infinite; }
+  .hero-logo .hero-mark { position: relative; width: min(460px, 95%); height: auto; overflow: visible; animation: float 6s ease-in-out infinite, markGlow 3s 2.6s ease-in-out infinite; }
+  /* Le logo se dessine trait par trait (le C, puis le H), puis s'illumine doucement */
+  .hero-mark .trace { stroke-dasharray: 1; stroke-dashoffset: 1; animation: traceDraw 1.7s cubic-bezier(.6,.1,.3,1) .3s forwards; }
+  .hero-mark .t2 { animation-delay: 1.2s; }
+  .hero-mark .t3 { animation-delay: 1.5s; }
+  @keyframes traceDraw { to { stroke-dashoffset: 0; } }
+  @keyframes markGlow { 50% { filter: drop-shadow(0 0 22px rgba(59,130,246,.6)); } }
   @keyframes float { 50% { transform: translateY(-14px); } }
 
   /* ---------- Sections ---------- */
@@ -514,7 +520,6 @@
   .hero-grid > div:first-child > :nth-child(4) { animation-delay: .45s; }
   .hero-grid > div:first-child > :nth-child(5) { animation-delay: .6s; }
   .hero-grid > div:first-child > :nth-child(6) { animation-delay: .75s; }
-  .hero-logo { animation: logoIn 1.2s cubic-bezier(.2,.7,.2,1) .2s both; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } }
   @keyframes logoIn { from { opacity: 0; transform: scale(.7) rotate(-8deg); filter: blur(10px); } }
 
@@ -635,7 +640,7 @@
   @media (max-width: 960px) {
     .hero-grid, .contact-box { grid-template-columns: 1fr; }
     .hero-logo { order: -1; }
-    .hero-logo img { width: 220px; }
+    .hero-logo .hero-mark { width: 220px; }
     .hero { padding-top: 120px; }
     .services { grid-template-columns: 1fr; }
     .contact-box { padding: 36px 24px; }
@@ -656,6 +661,7 @@
     section { padding: 70px 0; }
   }
   @media (prefers-reduced-motion: reduce) {
+    .hero-mark .trace { stroke-dashoffset: 0; }
     *, *::before, *::after, .reveal { animation: none !important; transition: none !important; opacity: 1; transform: none; }
     .circuit path { stroke-dashoffset: 0; }
     .cursor-glow, .btn-primary::after { display: none; }
@@ -735,7 +741,7 @@
         <span>Design sur mesure</span><span>100% responsive</span><span>Optimisé Google</span>
       </div>
     </div>
-    <div class="hero-logo"><img width="460" height="440" fetchpriority="high" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='30 110 950 910'%3E %3Cdefs%3E %3ClinearGradient id='chg' gradientUnits='userSpaceOnUse' x1='0' y1='140' x2='0' y2='990'%3E %3Cstop offset='0' stop-color='%231fc8f7'/%3E %3Cstop offset='0.45' stop-color='%233a8be0'/%3E %3Cstop offset='0.72' stop-color='%236a66da'/%3E %3Cstop offset='1' stop-color='%239a3ce2'/%3E %3C/linearGradient%3E %3CclipPath id='hclip'%3E%3Ccircle cx='486' cy='565' r='232'/%3E%3Crect x='690' y='0' width='400' height='1200'/%3E%3C/clipPath%3E %3C/defs%3E %3Cg fill='none' stroke='url(%23chg)' stroke-width='50' stroke-linejoin='miter' stroke-miterlimit='10'%3E %3Cpath d='M596.03 298.85 L642.86 197.04 A400 400 0 1 0 642.86 932.96 L596.03 831.15 A288 288 0 1 1 596.03 298.85 Z'/%3E %3Cg clip-path='url(%23hclip)'%3E %3Cpath d='M492.5 300 V509 H783 V166.5 H921 V965 H783 V619 H492.5 V830'/%3E %3Cpath d='M396 300 V830'/%3E %3C/g%3E %3C/g%3E %3C/svg%3E" alt="Logo CH Solution, agence de création de sites web en Algérie"></div>
+    <div class="hero-logo"><svg class="hero-mark" viewBox="30 110 950 910" width="460" height="440" role="img" aria-label="Logo CH Solution, agence de création de sites web en Algérie"><defs><linearGradient id="heroGrad" gradientUnits="userSpaceOnUse" x1="0" y1="140" x2="0" y2="990"><stop offset="0" stop-color="#1fc8f7"/><stop offset=".45" stop-color="#3a8be0"/><stop offset=".72" stop-color="#6a66da"/><stop offset="1" stop-color="#9a3ce2"/></linearGradient><clipPath id="heroClip"><circle cx="486" cy="565" r="232"/><rect x="690" y="0" width="400" height="1200"/></clipPath></defs><g fill="none" stroke="url(#heroGrad)" stroke-width="50" stroke-linejoin="miter" stroke-miterlimit="10"><path class="trace t1" pathLength="1" d="M596.03 298.85 L642.86 197.04 A400 400 0 1 0 642.86 932.96 L596.03 831.15 A288 288 0 1 1 596.03 298.85 Z"/><g clip-path="url(#heroClip)"><path class="trace t2" pathLength="1" d="M492.5 300 V509 H783 V166.5 H921 V965 H783 V619 H492.5 V830"/><path class="trace t3" pathLength="1" d="M396 300 V830"/></g></g></svg></div>
   </div>
 </section>
 
